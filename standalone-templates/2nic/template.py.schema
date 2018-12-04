@@ -1,0 +1,73 @@
+info:
+  title: "Citrix ADC 2NIC Template"
+  Author: "Citrix Systems"
+  description: "Creates an instance of Citrix ADC with two NICs"
+  version: 1.0.0
+
+imports:
+- path: template.py
+
+required:
+- region
+- google_zone
+- mgmt_network
+- mgmt_subnet
+- traffic_network
+- traffic_subnet
+- image_name
+- image_project_name
+
+properties:
+  region:
+    type: string
+    description: "The region where the Citrix ADC would be deployed. Example: us-east1"
+  google_zone:
+    type: string
+    description: "The zone within the region. Example: us-east-1b"
+  mgmt_network:
+    type: string
+    description: "The management network for Citrix ADC"
+  mgmt_subnet:
+    type: string
+    description: "The subnet within the management network."
+  mgmt_ports:
+    type: array
+    description: "The default ports opened for the flow of traffic. Ports 22, 80 and 443 are opened by default."
+    default:
+      - "22"
+      - "80"
+      - "443"
+  traffic_network:
+    type: string
+    description: "The network which Citrix ADC uses to process client/server traffic."
+  traffic_subnet:
+    type: string
+    description: "The subnet within the traffic network."
+  traffic_ports:
+    type: array
+    description: "The ports opened to allow Citrix ADC to process traffic from the client/server. Ports 22 and 80 are opened by default."
+    default:
+      - "80"
+      - "22"
+  image_name:
+    type: string
+    description: "The Citrix ADC image used to deploy the instance."
+  image_project_name:
+    type: string
+    description: "The project to which the Citrix ADC image belongs to."
+  instance_type:
+    type: string
+    description: "The machine type chosen to deploy the instance. Example: n1-standard-4"
+    default: "n1-standard-4"
+  ssh_public_key:
+    type: string
+    description: "SSH Keys of the format [USERNAME_1]:ssh-rsa [EXISTING_KEY] [USERNAME_1]. For multiple enties separate by '\n'. Leave blank in case you do not want to use ssh keys."
+    default: ""
+  service_account:
+    type: string
+    description: "The identity for the instance to authentiacate through. If one doesn't exist, leave blank."
+    default: ""
+  assign_public_ip:
+    type: string
+    description: "'yes' if a public ip needs to be assigned. 'no' if you do not require public access to the instance."
+    deafult: "no"
