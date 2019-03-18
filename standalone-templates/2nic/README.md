@@ -20,15 +20,15 @@ You would find three files under this directory. A YAML configuration file, a Py
 	2.	Populate/edit the variables (keys) present in the configuration.yml file to suite your needs.
 3.	Deploy the Citrix ADC VPX instance
 	1.	Use the following command to deploy the instance.<br>
-	    "gcloud deployment-manager deployments create" <deployment_name> --config configuration.yml
+	    gcloud deployment-manager deployments create <deployment_name> --config configuration.yml
 	2.	For more information refer https://cloud.google.com/deployment-manager/docs/
 4.	View the outputs (The Citrix ADC parameters). Use the following commands to view the instance that include the external/internal IPs.
 	1.	Run the command,<br>
-	    "gcloud deployment-manager deployments describe <deployment_name> | grep ‘manifest:’"
+	    gcloud deployment-manager deployments describe <deployment_name> | grep manifest:
 	2.	Fetch the manifest ID from the output of the above command.<br>
 	    Example: manifest: manifest-1542970019879
 	3.	Run the following command.<br>
-	    "gcloud deployment-manager manifests describe <manifest_id> --deployment <deployment_name> --format=value(layout)’"
+	    gcloud deployment-manager manifests describe <manifest_id> --deployment <deployment_name> --format="value(layout)"
 	4.	In the output, under the outputs section the details regarding the Citrix ADC, specifically the internal/external IPs can be found.
 
 ## Troubleshooting
