@@ -13,7 +13,7 @@ required:
 - mgmt_network
 - mgmt_subnet
 - image_name
-- image_project_name
+- image_project_id
 
 properties:
   region:
@@ -38,9 +38,9 @@ properties:
   image_name:
     type: string
     description: "The Citrix ADC image used to deploy the instance."
-  image_project_name:
+  image_project_id:
     type: string
-    description: "The project to which the Citrix ADC image belongs to."
+    description: "The project ID to which the Citrix ADC image belongs to."
   instance_type:
     type: string
     description: "The machine type chosen to deploy the instance. Example: n1-standard-4"

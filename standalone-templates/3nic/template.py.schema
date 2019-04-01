@@ -17,7 +17,7 @@ required:
 - server_network
 - server_subnet
 - image_name
-- image_project_name
+- image_project_id
 
 properties:
   region:

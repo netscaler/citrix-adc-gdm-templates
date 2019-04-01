@@ -70,7 +70,7 @@ def GenerateConfig(context):
               'boot': True,
               'autoDelete': True,
               'initializeParams': {
-                  'sourceImage': ''.join([COMPUTE_URL_BASE, 'projects/' + context.properties['image_project_name'],
+                  'sourceImage': ''.join([COMPUTE_URL_BASE, 'projects/' + context.properties['image_project_id'],
                                           '/global/images/',
                                           context.properties['image_name'],
                                          ])
