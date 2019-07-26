@@ -9,7 +9,15 @@ This template deploys a Citrix ADC instance in a single-arm mode, where a single
 2. Install [Google SDK](https://cloud.google.com/sdk/install) to access the "gcloud" utility.
 3. Citrix ADC BYOL license based on your requirements.
 4. A network and a subnet within the network under VPC Network.
-5. A Citrix ADC image on Google Cloud Platform. Details to create an image can be found [here](https://docs.citrix.com/en-us/netscaler/12-1/deploying-vpx/deploy-vpx-google-cloud.html).
+5. A Citrix ADC image on Google Cloud Platform.
+ 	1. For marketplace image, please refer to the table below.
+	2. Details to create a custom image image can be found [here](https://docs.citrix.com/en-us/netscaler/12-1/deploying-vpx/deploy-vpx-google-cloud.html).
+
+### Citrix ADC Marketplace Images
+
+| Release | Image Name | Project Name | URL |
+| --- | --- | --- | --- |
+| `13.0` | nsvpx-gcp-13-0-36-102-public | citrix-master-project | https://www.googleapis.com/compute/v1/projects/citrix-master-project/global/images/nsvpx-gcp-13-0-36-102-public |
 
 ### Deploy a Citrix ADC VPX instance
 You would find three files under this directory. A YAML configuration file, a Python template, and a schema. Note the following points before you start.
