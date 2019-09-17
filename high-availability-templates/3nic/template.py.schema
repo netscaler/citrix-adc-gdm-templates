@@ -1,0 +1,86 @@
+info:
+  title: "Citrix ADC HA 3NIC Template"
+  Author: "Citrix Systems"
+  description: "Creates a Citrix ADC HA solution with three NICs"
+  version: 1.0.0
+
+imports:
+- path: template.py
+
+required:
+- region
+- instance1_google_zone
+- instance2_google_zone
+- mgmt_network
+- mgmt_subnet
+- client_network
+- client_subnet
+- server_network
+- server_subnet
+- image_name
+- image_project_id
+
+properties:
+  region:
+    type: string
+    description: "The region where the Citrix ADC HA solution would be deployed. Example: us-east1"
+  instance1_google_zone:
+    type: string
+    description: "The zone within the region for the instance1 node. Example: us-east-1b"
+  instance2_google_zone:
+    type: string
+    description: "The zone within the region for the instance2 node. Example: us-east-1b"
+  mgmt_network:
+    type: string
+    description: "The management network for Citrix ADC HA solution"
+  mgmt_subnet:
+    type: string
+    description: "The subnet within the management network."
+  mgmt_tcp_ports:
+    type: array
+    description: "The default TCP ports opened for the flow of traffic. Ports 22, 80 and 443 are opened by default."
+    default:
+      - "22"
+      - "80"
+      - "443"
+  mgmt_udp_ports:
+    type: array
+    description: "The default UDP ports opened for the exchange of HA heartbeats. Port 3003 is opened by default."
+    default:
+      - "3003"
+  client_network:
+    type: string
+    description: "The network which Citrix ADC HA nodes use to process client traffic."
+  client_subnet:
+    type: string
+    description: "The subnet within the traffic network."
+  server_network:
+    type: string
+    description: "The network which Citrix ADC nodes use to process server traffic."
+  server_subnet:
+    type: string
+    description: "The subnet within the traffic network."
+  traffic_ports:
+    type: array
+    description: "The ports opened to allow Citrix ADC to process traffic from the client/server. Ports 22 and 80 are opened by default."
+    default:
+      - "80"
+      - "22"
+  image_name:
+    type: string
+    description: "The Citrix ADC image used to deploy the instance."
+  image_project_name:
+    type: string
+    description: "The project to which the Citrix ADC image belongs to."
+  instance_type:
+    type: string
+    description: "The machine type chosen to deploy the instance. Example: n1-standard-4"
+    default: "n1-standard-4"
+  ssh_public_key:
+    type: string
+    description: "SSH Keys of the format [USERNAME_1]:ssh-rsa [EXISTING_KEY] [USERNAME_1]. For multiple enties separate by '\n'. Leave blank in case you do not want to use ssh keys."
+    default: ""
+  service_account:
+    type: string
+    description: "The identity for the instance to authentiacate through. If one doesn't exist, leave blank."
+    default: ""

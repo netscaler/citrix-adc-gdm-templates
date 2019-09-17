@@ -1,0 +1,53 @@
+imports:
+- path: template.py
+resources:
+- name: citrix-adc-ha-3nic-deployment
+  type: template.py
+  properties:
+   #The Google Region where the Citrix ADC HA solution would be deployed. Example: us-east1
+   region: "<region>"
+   #The availability zone in the region where the Citrix ADC Primary would be deployed.
+   #Example: us-east1-b
+   instance1_google_zone: "<instance1_google_zone>"
+   #The availability zone in the region where the Citrix ADC Secondary would be deployed.
+   #Example: us-east1-b
+   instance2_google_zone: "<instance2_google_zone>"
+   #The management network to deploy the Citrix ADC HA solution
+   mgmt_network: "<management_network>"
+   #Subnet for the management interface
+   mgmt_subnet: "<management_subnet>"
+   #Ports to open to process management traffic
+   mgmt_tcp_ports:
+       - "22"
+       - "80"
+       - "443"
+       - "3008"
+       - "3009"
+       - "3010"
+       - "3011"
+   mgmt_udp_ports:
+       - "3003"
+   #Network for the nic used to handle client side traffic
+   client_network: "<client_network>"
+   #Subnet in the specified network to handle client side traffic
+   client_subnet: "<client_subnet>"
+   #Network for the nic used to handle server side traffic
+   server_network: "<server_network>"
+   #Subnet in the specified network to handle server side traffic
+   server_subnet: "<server_subnet>"
+   #Ports to open to process client/server traffic
+   traffic_ports:
+       - "80"
+       - "22"
+   #The Citrix ADC image name
+   image_name: "<image_name>"
+   #The project name where the image is hosted
+   image_project_id: "<image_project_id>"
+   #The instance type to deploy the Citrix ADC instance Example: n1-standard-4
+   instance_type: "<instance_type>"
+   #The public key used for authenticating into the Citrix ADC.
+   #Specify values separated by \n to specify more than one user.
+   #Set it to "" if you wish to specify no key
+   ssh_public_key: "[USERNAME_1]:ssh-rsa [EXISTING_KEY] [USERNAME_1]"
+   #Specify a service account. If not, leave the field blank.
+   service_account: "<service_account>"
