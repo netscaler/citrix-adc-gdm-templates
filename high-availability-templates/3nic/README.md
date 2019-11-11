@@ -13,11 +13,38 @@ This template deploys a Citrix HA solution with two instance with three NICs eac
  	1. For marketplace image, please refer to the table below.
 	2. Details to create a custom image image can be found [here](https://docs.citrix.com/en-us/netscaler/12-1/deploying-vpx/deploy-vpx-google-cloud.html).
 
-### Citrix ADC Marketplace Images
+### Citrix ADC Images
 
+## BYOL
 | Release | Image Name | Project Name | URL |
 | --- | --- | --- | --- |
 | `13.0` | nsvpx-gcp-13-0-36-102-public | citrix-master-project | https://www.googleapis.com/compute/v1/projects/citrix-master-project/global/images/nsvpx-gcp-13-0-36-102-public |
+| `13.0` | citrix-adc-vpx-byol-13-0-41-25 | citrix-master-project | https://www.googleapis.com/compute/v1/projects/citrix-master-project/global/images/citrix-adc-vpx-byol-13-0-41-25 |
+| `13.0` | citrix-adc-vpx-byol-13-0-latest | citrix-master-project | https://www.googleapis.com/compute/v1/projects/citrix-master-project/global/images/citrix-adc-vpx-byol-13-0-latest |
+
+## Express License
+| Release | Image Name | Project Name | URL |
+| --- | --- | --- | --- |
+| `13.0` | citrix-adc-vpx-express-13-0-41-25 | citrix-master-project | https://www.googleapis.com/compute/v1/projects/citrix-master-project/global/images/citrix-adc-vpx-express-13-0-41-25 |
+| `13.0` | citrix-adc-vpx-express-13-0-latest | citrix-master-project | https://www.googleapis.com/compute/v1/projects/citrix-master-project/global/images/citrix-adc-vpx-express-13-0-latest |
+
+## Standard Licence
+| Release | Image Name | Project Name | URL |
+| --- | --- | --- | --- |
+| `13.0` | citrix-adc-vpx-10-standard-13-0-41-25 | citrix-master-project | https://www.googleapis.com/compute/v1/projects/citrix-master-project/global/images/citrix-adc-vpx-10-standard-13-0-41-25 |
+| `13.0` | citrix-adc-vpx-10-standard-13-0-latest | citrix-master-project | https://www.googleapis.com/compute/v1/projects/citrix-master-project/global/images/citrix-adc-vpx-10-standard-13-0-latest |
+
+## Platinum License
+| Release | Image Name | Project Name | URL |
+| --- | --- | --- | --- |
+| `13.0` | citrix-adc-vpx-10-platinum-13-0-41-25 | citrix-master-project | https://www.googleapis.com/compute/v1/projects/citrix-master-project/global/images/citrix-adc-vpx-10-platinum-13-0-41-25 |
+| `13.0` | citrix-adc-vpx-10-platinum-13-0-latest | citrix-master-project | https://www.googleapis.com/compute/v1/projects/citrix-master-project/global/images/citrix-adc-vpx-10-platinum-13-0-latest |
+
+## Enterprise License
+| Release | Image Name | Project Name | URL |
+| --- | --- | --- | --- |
+| `13.0` | citrix-adc-vpx-10-enterprise-13-0-41-25 | citrix-master-project | https://www.googleapis.com/compute/v1/projects/citrix-master-project/global/images/citrix-adc-vpx-10-enterprise-13-0-41-25 |
+| `13.0` | citrix-adc-vpx-10-enterprise-13-0-latest | citrix-master-project | https://www.googleapis.com/compute/v1/projects/citrix-master-project/global/images/citrix-adc-vpx-10-enterprise-13-0-latest |
 
 ### Deploy a Citrix ADC HA solution
 You would find three files under this directory. A YAML configuration file, a Python template, and a schema. Note the following points before you start.
