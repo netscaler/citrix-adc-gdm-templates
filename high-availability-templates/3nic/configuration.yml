@@ -7,7 +7,7 @@ resources:
    #The Google Region where the Citrix ADC HA solution would be deployed. Example: us-east1
    region: "<region>"
    #The availability zone in the region where the Citrix ADC Primary would be deployed.
-   #Example: us-east1-b
+   #Example: us-east1-a
    instance1_google_zone: "<instance1_google_zone>"
    #The availability zone in the region where the Citrix ADC Secondary would be deployed.
    #Example: us-east1-b
@@ -40,9 +40,9 @@ resources:
        - "80"
        - "22"
    #The Citrix ADC image name
-   image_name: "<image_name>"
+   image_name: "citrix-adc-vpx-byol-14-1-12-30"
    #The project name where the image is hosted
-   image_project_id: "<image_project_id>"
+   image_project_id: "citrix-master-project"
    #The instance type to deploy the Citrix ADC instance Example: n1-standard-4
    instance_type: "<instance_type>"
    #The public key used for authenticating into the Citrix ADC.

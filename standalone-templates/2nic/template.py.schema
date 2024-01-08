@@ -12,6 +12,7 @@ required:
 - google_zone
 - mgmt_network
 - mgmt_subnet
+- restricted_management_access_cidr
 - traffic_network
 - traffic_subnet
 - image_name
@@ -27,6 +28,9 @@ properties:
   mgmt_network:
     type: string
     description: "The management network for Citrix ADC"
+  restricted_management_access_cidr:
+    type: string
+    description: "The CIDR block from which the management access is allowed. Example: 103.102.155.21/32"
   mgmt_subnet:
     type: string
     description: "The subnet within the management network."

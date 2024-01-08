@@ -13,15 +13,19 @@ resources:
    mgmt_network: "<management_network>"
    #Subnet for the management interface
    mgmt_subnet: "<management_subnet>"
+   # Provide the CIDR (usually Public) to access the management interface of the Citrix ADC
+   # You can get your public IP from https://www.whatismyip.com/ OR running `curl ifconfig.me`
+   # Example: "100.100.10.10/32" OR "100.100.0.0/16"
+   restricted_management_access_cidr: ""
    #Ports to open to process traffic
    mgmt_ports:
        - "22"
        - "80"
        - "443"
    #The Citrix ADC image name
-   image_name: "<image_name>"
+   image_name: "citrix-adc-vpx-byol-14-1-12-30"
    #The project name where the image is hosted
-   image_project_id: "<image_project_id>"
+   image_project_id: "citrix-master-project"
    #The instance type to deploy the Citrix ADC instance Example: n1-standard-4
    instance_type: "<instance_type>"
    #The public key used for authenticating into the Citrix ADC.
