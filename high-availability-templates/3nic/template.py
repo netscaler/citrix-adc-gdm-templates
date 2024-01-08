@@ -198,7 +198,7 @@ def GenerateConfig(context):
           'network': ''.join([COMPUTE_URL_BASE, 'projects/',
                             context.env['project'], '/global/networks/',
                             context.properties['mgmt_network']]),
-          'sourceRanges': ['0.0.0.0/0'],
+          'sourceRanges': [context.properties['restricted_management_access_cidr']],
           'allowed': [{
               'IPProtocol': 'tcp',
               'ports': context.properties['mgmt_tcp_ports']

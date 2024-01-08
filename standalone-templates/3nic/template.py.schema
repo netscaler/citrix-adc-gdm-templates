@@ -12,6 +12,7 @@ required:
 - google_zone
 - mgmt_network
 - mgmt_subnet
+- restricted_management_access_cidr
 - client_network
 - client_subnet
 - server_network
@@ -39,6 +40,9 @@ properties:
       - "22"
       - "80"
       - "443"
+  restricted_management_access_cidr:
+    type: string
+    description: "The CIDR block from which the management access is allowed. Example: 103.102.155.21/32"
   client_network:
     type: string
     description: "The network which Citrix ADC uses to process client traffic."

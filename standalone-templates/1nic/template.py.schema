@@ -2,7 +2,7 @@ info:
   title: "Citrix ADC 1NIC Template"
   Author: "Citrix Systems"
   description: "Creates a single instance of Citrix ADC with a single NIC"
-  version: 1.0.0
+  version: 1.1.0
 
 imports:
 - path: template.py
@@ -12,6 +12,7 @@ required:
 - google_zone
 - mgmt_network
 - mgmt_subnet
+- restricted_management_access_cidr
 - image_name
 - image_project_id
 
@@ -28,6 +29,9 @@ properties:
   mgmt_subnet:
     type: string
     description: "The subnet within the management network."
+  restricted_management_access_cidr:
+    type: string
+    description: "The CIDR block from which the management access is allowed. Example: 103.102.155.21/32"
   mgmt_ports:
     type: array
     description: "The default ports opened for the flow of traffic. Ports 22, 80 and 443 are opened by default."
