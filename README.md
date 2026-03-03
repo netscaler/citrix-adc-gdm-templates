@@ -1,3 +1,13 @@
+# 🚨 Maintenance Notice
+<img src="https://img.shields.io/badge/Maintenance-Unmaintained-red.svg" />
+
+This repository is **archived and no longer maintained**.
+
+You can find all officially supported automation options [here](https://www.GitHub.com/netscaler/automation-toolkit)
+
+For any assistance related to NetScaler automation, please email 
+📧 **netscaler-automationtoolkit@cloud.com**
+
 # Citrix ADC GDM Templates
 
 ## Introduction
@@ -39,3 +49,4 @@ For production issues with the templates, contact Citrix Support through normal 
 ## Legal
 - [Citrix Privacy Policy](http://www.citrix.com/about/legal/privacy.html)
 - [Citrix License](LICENSE.md)
+
